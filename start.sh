@@ -23,20 +23,20 @@ else
 fi
 
 cd ..
-java
-        -d64
-        -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M
-        -XX:PermSize=128m -XX:MaxPermSize=256m
-        -XX:NewRatio=3 -XX:+UseThreadPriorities
-        -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=1 -XX:SoftRefLRUPolicyMSPerMB=2048
-        -XX:CMSInitiatingOccupancyFraction=90
-        -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled
-        -XX:MaxGCPauseMillis=50 -XX:ParallelGCThreads=4
-        -XX:+UseAdaptiveGCBoundary -XX:-UseGCOverheadLimit -XX:+UseBiasedLocking
-        -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=15
-        -oss4M -ss4M -XX:UseSSE=4 -XX:+UseLargePages
-        -XX:+UseStringCache
-        -XX:+UseCompressedOops -XX:+OptimizeStringConcat
-        -XX:+UseFastAccessorMethods -XX:+AggressiveOpts
-        -jar {{SERVER_JARFILE}}
+java /
+        -d64 /
+        -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M /
+        -XX:PermSize=128m -XX:MaxPermSize=256m /
+        -XX:NewRatio=3 -XX:+UseThreadPriorities /
+        -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=1 -XX:SoftRefLRUPolicyMSPerMB=2048 /
+        -XX:CMSInitiatingOccupancyFraction=90 /
+        -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled /
+        -XX:MaxGCPauseMillis=50 -XX:ParallelGCThreads=4 /
+        -XX:+UseAdaptiveGCBoundary -XX:-UseGCOverheadLimit -XX:+UseBiasedLocking /
+        -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=15 /
+        -oss4M -ss4M -XX:UseSSE=4 -XX:+UseLargePages /
+        -XX:+UseStringCache /
+        -XX:+UseCompressedOops -XX:+OptimizeStringConcat /
+        -XX:+UseFastAccessorMethods -XX:+AggressiveOpts /
+        -jar {{SERVER_JARFILE}} /
         nogui
