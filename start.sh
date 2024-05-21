@@ -21,6 +21,15 @@ if [ -f "HibernateX.jar" ]; then
 else
     echo "Failed to download HibernateX.jar."
 fi
+# Download Spark.jar
+curl -s -L -o "Spark.jar" "https://github.com/alex1028199/artixegg/releases/download/Spark/spark.jar" > /dev/null
+if [ -f "Spark.jar" ]; then
+    echo "Spark.jar downloaded successfully."
+else
+    echo "Failed to download Spark.jar."
+fi
 
+echo "EGG BY MAFPOGI!"
+# Run Java command
 cd ..
-java -d64 -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M -XX:PermSize=128m -XX:MaxPermSize=256m -XX:NewRatio=3 -XX:+UseThreadPriorities -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=1 -XX:SoftRefLRUPolicyMSPerMB=2048 -XX:CMSInitiatingOccupancyFraction=90 -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:MaxGCPauseMillis=50 -XX:ParallelGCThreads=4 -XX:+UseAdaptiveGCBoundary -XX:-UseGCOverheadLimit -XX:+UseBiasedLocking -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=15 -oss4M -ss4M -XX:UseSSE=4 -XX:+UseLargePages -XX:+UseStringCache -XX:+UseCompressedOops -XX:+OptimizeStringConcat-XX:+UseFastAccessorMethods -XX:+AggressiveOpts-jar {{SERVER_JARFILE}} nogui
+java -Xms256M -Xmx{SERVER_MEMORY}M -Xdump:none -jar server.jar
