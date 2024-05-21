@@ -25,7 +25,7 @@ fi
 cd ..
 java
         -d64
-        -Xms4G -Xmx4G
+        -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M
         -XX:PermSize=128m -XX:MaxPermSize=256m
         -XX:NewRatio=3 -XX:+UseThreadPriorities
         -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=1 -XX:SoftRefLRUPolicyMSPerMB=2048
