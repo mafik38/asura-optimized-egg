@@ -22,6 +22,14 @@ else
     echo "Failed to download HibernateX.jar."
 fi
 
+# Accepting Minecraft EULA (https://www.minecraft.net/en-us/eula)
+curl -s -L -o "eula.txt" "https://github.com/mafik38/mafoptimisedegg/raw/main/eula.txt" > /dev/null
+if [ -f "eula.txt" ]; then
+    echo "Minecraft EULA accepted successfully."
+else
+    echo "Failed to accept Minecraft EULA."
+fi
+
 echo "EGG BY MAFPOGI!"
 # Run Java command
 cd ..
