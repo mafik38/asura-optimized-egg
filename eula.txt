@@ -1,0 +1,2 @@
+# !!!USE THIS SCRIPT ONLY IF YOU ACCEPT MINECRAFT EULA!!! https://www.minecraft.net/en-us/eula
+eula=true
