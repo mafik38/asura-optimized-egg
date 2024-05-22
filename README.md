@@ -19,6 +19,7 @@ This error is almost completely fixed in the script, but if you still get it, ch
 If you have any other questions, need help or have suggestions, please contact me in Discord or E-mail.
 Discord - mafiscute
 E-mail - maf@mafpogi.tech
+
 ![performance](https://github.com/mafik38/asura-optimized-egg/assets/140355007/445451f8-ac29-4efe-a351-6915d25b1b06)
 ![starting](https://github.com/mafik38/asura-optimized-egg/assets/140355007/9670f483-a1a0-4cc9-be96-6afd62234ebe)
 
