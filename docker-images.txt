@@ -1,0 +1,10 @@
+# There's all Java OpenJ9 docker images. (Less RAM usage)
+        Java 22: ghcr.io\/software-noob\/pterodactyl-images:java_22
+        Java 21: ghcr.io\/software-noob\/pterodactyl-images:java_21_openj9
+        Java 20: ghcr.io\/software-noob\/pterodactyl-images:java_20_openj9
+        Java 19: ghcr.io\/pterodactyl\/yolks:java_19j9
+        Java 18: ghcr.io\/pterodactyl\/yolks:java_18j9
+        Java 17: ghcr.io\/pterodactyl\/yolks:java_17j9
+        Java 16: ghcr.io\/pterodactyl\/yolks:java_16j9
+        Java 11: ghcr.io\/pterodactyl\/yolks:java_11j9
+        Java 8: ghcr.io\/pterodactyl\/yolks:java_8j9
