@@ -17,7 +17,7 @@ cd "$plugins_dir"
 
 # Download HibernateX.jar
 echo "Download HibernateX.jar..."
-curl -s -L -o "HibernateX.jar" "https://github.com/mafik38/mafoptimisedegg/raw/main/HibernateX.jar" > /dev/null
+curl -s -L -o "HibernateX.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/HibernateX.jar" > /dev/null
 if [ -f "HibernateX.jar" ]; then
     echo "HibernateX.jar downloaded successfully."
 else
@@ -25,11 +25,11 @@ else
 fi
 # Download Spark.jar
 echo "Download Spark.jar..."
-curl -s -L -o "Spark.jar" "https://github.com/mafik38/mafoptimisedegg/raw/main/Spark.jar" > /dev/null
+curl -s -L -o "Spark.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/Spark.jar" > /dev/null
 if [ -f "Spark.jar" ]; then
     echo "Spark.jar downloaded successfully."
     cd /home/container/plugins/spark
-    curl -s -L -o "config.json" "https://github.com/mafik38/mafoptimisedegg/raw/main/sparkconfig.json"
+    curl -s -L -o "config.json" "https://github.com/mafik38/asura-optimized-egg/raw/main/sparkconfig.json"
     echo "Fixed spark configuration."
 else
     echo "Failed to download Spark.jar."
@@ -40,7 +40,7 @@ fi
 cd ..
 
 echo "Accepting Minecraft EULA (https://www.minecraft.net/en-us/eula)"
-curl -s -L -o "eula.txt" "https://github.com/mafik38/mafoptimisedegg/raw/main/eula.txt" > /dev/null
+curl -s -L -o "eula.txt" "https://github.com/mafik38/asura-optimized-egg/raw/main/eula.txt" > /dev/null
 if [ -f "eula.txt" ]; then
     echo "Minecraft EULA accepted successfully."
 else
