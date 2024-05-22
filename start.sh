@@ -21,12 +21,20 @@ if [ -f "HibernateX.jar" ]; then
 else
     echo "Failed to download HibernateX.jar."
 fi
+# Download Spark.jar
+echo "Download Spark.jar..."
+curl -s -L -o "Spark.jar" "https://github.com/mafik38/mafoptimisedegg/raw/main/Spark.jar" > /dev/null
+if [ -f "Spark.jar" ]; then
+    echo "Spark.jar downloaded successfully."
+else
+    echo "Failed to download Spark.jar."
+
 # Accepting Minecraft EULA (https://www.minecraft.net/en-us/eula)
 
 cd ..
 
 echo "Accepting Minecraft EULA (https://www.minecraft.net/en-us/eula)"
-curl -s -L -o "HibernateX.jar" "https://github.com/mafik38/mafoptimisedegg/raw/main/eula.txt" > /dev/null
+curl -s -L -o "eula.txt" "https://github.com/mafik38/mafoptimisedegg/raw/main/eula.txt" > /dev/null
 if [ -f "eula.txt" ]; then
     echo "Minecraft EULA accepted successfully."
 else
