@@ -4,7 +4,8 @@ Startup message to fully optimize your Paper/Purpur server. I tested this on my 
 
 ```bash 
 curl -Os https://raw.githubusercontent.com/mafik38/mafoptimisedegg/main/start.sh && bash start.sh
-``` - the startup command
+```
+ - the startup command
 
 
 
