@@ -22,4 +22,5 @@ E-mail - maf@mafpogi.tech
 
 ![performance](https://github.com/mafik38/asura-optimized-egg/assets/140355007/445451f8-ac29-4efe-a351-6915d25b1b06)
 ![starting](https://github.com/mafik38/asura-optimized-egg/assets/140355007/9670f483-a1a0-4cc9-be96-6afd62234ebe)
+![chunks](https://github.com/mafik38/asura-optimized-egg/assets/140355007/711207c8-a6ac-49fe-ad8a-7716e878facf)
 
