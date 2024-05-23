@@ -38,6 +38,7 @@ fi
 
 # Download LagFixer.jar
 echo "Download LagFixer.jar..."
+cd /home/container/plugins
 curl -s -L -o "LagFixer.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/LagFixer.jar" > /dev/null
 if [ -f "LagFixer.jar" ]; then
     echo "LagFixer.jar downloaded successfully."
@@ -55,7 +56,7 @@ if [ -f "eula.txt" ]; then
 else
     echo "Failed to accept Minecraft EULA."
 fi
-echo '     -        ____   _   _   ____       -'
+echo '     -       _-----  _   _   ____       -'
 echo '    / \     | (___  | | | | | __ \     / \'
 echo '   / _ \     \___ \ | | | | | |__) |  / _ \'
 echo '  / ___ \   ____) | | |_| | |  _  /  / ___ \'
