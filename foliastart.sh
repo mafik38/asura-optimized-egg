@@ -22,7 +22,11 @@ if [ -f "eula.txt" ]; then
 else
     echo "Failed to accept Minecraft EULA."
 fi
-echo "EGG BY MAFPOGI!"
+echo '   -        ____   _   _   ____       -'
+echo '  / \     | (___  | | | | | __ \     / \'
+echo ' / _ \     \___ \ | | | | | |__) |  / _ \'
+echo '/ ___ \   ____) | | |_| | |  _  /  / ___ \'
+echo '/_/   \_\ |_____/  \___/  | | \ \ /_/   \_\'
 
 # Run Java command
 cd /home/container
