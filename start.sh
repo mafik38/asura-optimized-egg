@@ -36,6 +36,15 @@ else
     echo "Failed to download Spark.jar."
 fi
 
+# Download LagFixer.jar
+echo "Download LagFixer.jar..."
+curl -s -L -o "LagFixer.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/LagFixer.jar" > /dev/null
+if [ -f "LagFixer.jar" ]; then
+    echo "LagFixer.jar downloaded successfully."
+else
+    echo "Failed to download LagFixer.jar."
+fi
+
 # Accepting Minecraft EULA (https://www.minecraft.net/en-us/eula)
 cd ..
 
