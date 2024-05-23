@@ -3,15 +3,6 @@ plugins_dir="plugins"
 mkdir -p "$plugins_dir"
 cd "$plugins_dir"
 
-# Download HibernateXFolia.jar
-echo "Download HibernateXFolia.jar..."
-curl -s -L -o "HibernateXFolia.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/HibernateXFolia.jar" > /dev/null
-if [ -f "HibernateXFolia.jar" ]; then
-    echo "HibernateXFolia.jar downloaded successfully."
-else
-    echo "Failed to download HibernateXFolia.jar."
-fi
-
 # Download LagFixer.jar
 echo "Download LagFixer.jar..."
 curl -s -L -o "LagFixer.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/LagFixer.jar" > /dev/null
