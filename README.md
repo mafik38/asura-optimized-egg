@@ -3,10 +3,10 @@
 Startup message to fully optimize your Paper/Purpur server. I tested this on my 1.20.6 server. Usage was 700 MB of memory and 5% of CPU. Also, use OpenJ9 Java docker images for better performance. You can find them for the pterodactyl panel on the Yolk or SoftwareNoob GitHub pages. https://github.com/pterodactyl/yolks and https://github.com/Software-Noob/pterodactyl-images
 
 ```bash 
-curl -Os https://raw.githubusercontent.com/mafik38/mafoptimisedegg/main/start.sh && bash start.sh
+curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/start.sh && bash start.sh
 ```
  - ^ the startup command
- - (For Folia use `curl -Os https://raw.githubusercontent.com/mafik38/mafoptimisedegg/main/foliastart.sh && bash start.sh` )
+ - (For Folia use `curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/foliastart.sh && bash start.sh` )
 
 
 FAQ
