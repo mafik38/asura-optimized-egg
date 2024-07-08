@@ -20,7 +20,7 @@ No, this optimization improves performance even when there are players on the se
 This error is almost completely fixed in the script, but if you still get it, change Java version to another one (OpenJ9). If it doesn't help you will need to remove OpenJ9 java and put the usual one, or remove HibernateX plugin (for this you will need to make a fork of my project and remove HibernateX installation in it).
 5. I have other questions, what should I do?
 If you have any other questions, need help or have suggestions, please contact me in Discord or E-mail.
-Discord - mafiscute
+Discord - mafpofi_
 E-mail - maf@mafpogi.tech
 
 ![performance](https://github.com/mafik38/asura-optimized-egg/assets/140355007/445451f8-ac29-4efe-a351-6915d25b1b06)
