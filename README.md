@@ -6,7 +6,7 @@ Startup message to fully optimize your Paper/Purpur server. I tested this on my 
 curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/start.sh && bash start.sh
 ```
  - ^ the startup command
- - (For Folia use `curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/foliastart.sh && bash start.sh` )
+ - (For Folia use `curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/foliastart.sh && bash foliastart.sh` )
 
 
 FAQ
