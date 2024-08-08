@@ -14,8 +14,7 @@ curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/star
 FAQ
 1. Why is my TPS low when there are 0 players on the server?
 Because HibernateX minimizes unnecessary resources (CPU and RAM) while making the TPS lower. To have a high TPS you need to log into the server.
-2. Why do I see the message [xx:xx:xx:xx WARN]: Can't keep up! Is the server overloaded? Running X ms or X ticks behind and how to fix it?
-This warning is also caused by HibernateX, in this case it doesn't mean anything to you, you will need to log in to the server to get rid of it too.
+2. My server won't start, what should I do? Please take a screenshot or send me your server logs to my Discord: mafpogi_
 3. If I log into the server, will it use the default resources?
 No, this optimization improves performance even when there are players on the server.
 4. What if I get an error with JVM Dump?
