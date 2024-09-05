@@ -19,7 +19,9 @@ Because HibernateX minimizes unnecessary resources (CPU and RAM) while making th
 No, this optimization improves performance even when there are players on the server.
 4. What if I get an error with JVM Dump?
 This error is almost completely fixed in the script, but if you still get it, change Java version to another one (OpenJ9). If it doesn't help you will need to remove OpenJ9 java and put the usual one, or remove HibernateX plugin (for this you will need to make a fork of my project and remove HibernateX installation in it).
-5. I have other questions, what should I do?
+5. How many resources should be allocated for the most stable operation and for the server to operate as efficiently as possible?
+For the most stable operation, it is advisable to allocate NO more and NO less than **24GB of RAM and 32 CPU cores**, however, if there are fewer/more resources, the server will not suffer much, although **I would not recommend allocating TOO much**.
+6. I have other questions, what should I do?
 If you have any other questions, need help or have suggestions, please contact me in Discord or E-mail.
 Discord - mafpofi_
 E-mail - maf@mafpogi.tech
