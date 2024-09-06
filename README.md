@@ -1,6 +1,6 @@
 # Mafpogi's asura optimized egg
 
-Startup message to fully optimize your Paper/Purpur/Folia server. I tested this on my 1.21 Paper, Purpur, Folia server. Usage was ~400 MB of memory and ~0.27% of CPU. Also, to use less RAM, use OpenJ9 Java docker images.. You can find them for the pterodactyl panel on the Yolk or SoftwareNoob GitHub pages. https://github.com/pterodactyl/yolks and https://github.com/Software-Noob/pterodactyl-images
+Startup message to fully optimize your Paper/Purpur/Folia server. I tested this on my 1.21.1, 1.20.6, 1.19.4, 1.18.1, 1.17.1, 1.16.5 and other Paper, Purpur, Folia server versions. Usage was ~400 MB of memory and ~0.27% of CPU. Also, to use less RAM, use OpenJ9 Java docker images.. You can find them for the pterodactyl panel on the Yolk or SoftwareNoob GitHub pages. https://github.com/pterodactyl/yolks and https://github.com/Software-Noob/pterodactyl-images
 
 ### !!!WARNING!!! THIS SCRIPT WILL NOT MAKE YOUR SERVER WORK MUCH FASTER, BECAUSE IT IS DESIGNED NOT TO LOAD THE NODES OF YOUR HOSTING, THUS ALLOWING YOU TO CREATE MANY SERVERS WITH A LARGE AMOUNT OF RESOURCES WITHOUT OVERLOADING THE NODE!!!
 
