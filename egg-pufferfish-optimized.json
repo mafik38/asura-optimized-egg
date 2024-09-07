@@ -1,0 +1,74 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2024-07-11T03:06:02+00:00",
+    "name": "Pufferfish - optimized",
+    "author": "maf@mafpogi.tech",
+    "description": "Pufferfish is a high performance fork of Paper, which aims to provide enterprise features and maximize performance.",
+    "features": [
+        "eula",
+        "java_version",
+        "pid_limit"
+    ],
+    "docker_images": {
+        "Java 22 (DEV ONLY)": "ghcr.io\/software-noob\/pterodactyl-images:java_22",
+        "Java 21": "ghcr.io\/software-noob\/pterodactyl-images:java_21_openj9",
+        "Java 20": "ghcr.io\/software-noob\/pterodactyl-images:java_20_openj9",
+        "Java 19": "ghcr.io\/pterodactyl\/yolks:java_19j9",
+        "Java 18": "ghcr.io\/pterodactyl\/yolks:java_18j9",
+        "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17j9",
+        "Java 16": "ghcr.io\/pterodactyl\/yolks:java_16j9",
+        "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11j9",
+        "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8j9"
+    },
+    "file_denylist": [],
+    "startup": "curl -Os https:\/\/raw.githubusercontent.com\/mafik38\/asura-optimized-egg\/main\/start.sh && bash start.sh"",
+    "config": {
+        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\r\n# Pufferfish Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nif [ -n \"$DL_PATH\" ]; then\r\necho \"Using supplied download url: $DL_PATH\"\r\nDOWNLOAD_URL=$(eval echo $(echo \"$DL_PATH\" | sed -e 's\/{{\/${\/g' -e 's\/}}\/}\/g'))\r\nelse\r\n    \r\n# quick fix with wanting to use specific version\r\ncase \"$MINECRAFT_VERSION\" in\r\n  \"1.20.1\")\r\n    BUILD_NUMBER=\"27\"\r\n    ;;\r\n  \"1.20.2\")\r\n    BUILD_NUMBER=\"35\"\r\n    ;;\r\n  \"1.20.4\")\r\n    BUILD_NUMBER=\"51\"\r\n    ;;\r\n  *)\r\n    BUILD_NUMBER=${BUILD_NUMBER:-\"default_value\"}\r\n    ;;\r\nesac\r\n\r\n# Pufferfish doesn't use the patch version of semver, so if we end up given one as a response, we remove it\r\nif echo \"$MINECRAFT_VERSION\" | grep -qE '^[0-9]+\\.[0-9]+\\.[0-9]+$'; then\r\n# Remove the third component from semver\r\nMINECRAFT_VERSION=$(echo \"$MINECRAFT_VERSION\" | awk -F. '{print $1\".\"$2}')\r\nfi\r\n# Queries the CI so we can figure out what versions of pufferfish is available. I'm also filtering out pufferfish+ and pufferfish purpur as they aren't needed\r\nVERSIONS=$(curl -s \"https:\/\/ci.pufferfish.host\/api\/json\" | jq -r '.jobs[].name | select(test(\"Pufferfishplus|Pufferfish-Purpur\"; \"i\") | not)')\r\n# We check minecraft version given against the available puffferfish versions via regex.\r\nVERSION=\"\"\r\nfor v in $VERSIONS; do\r\nif echo \"$v\" | grep -qE \".*$MINECRAFT_VERSION.*\"; then\r\nVERSION=\"$v\"\r\nbreak\r\nfi\r\ndone\r\n# Verify if it exists + get latest version\r\nVER_EXISTS=$([ \"$VERSION\" != \"\" ] && echo true || echo false)\r\nLATEST_VERSION=$(echo \"$VERSIONS\" | tr ' ' '\\n' | sort -rV | head -n 1)\r\n# if not valid switch to latest. This is important as we avoid errors from querying invalid versions\r\nif [ \"$VER_EXISTS\" = \"true\" ]; then\r\necho \"Version is valid. Using version $MINECRAFT_VERSION\"\r\nelse\r\necho \"Specified version not found. Defaulting to the latest Pufferfish version\"\r\nMINECRAFT_VERSION=\"$LATEST_VERSION\"\r\nVERSION=\"$LATEST_VERSION\"\r\nfi\r\n# checks if build is valid and gets latest build\r\nBUILD_EXISTS=$(curl -s \"https:\/\/ci.pufferfish.host\/job\/$VERSION\/api\/json\/\" | jq -r --arg BUILD \"$BUILD_NUMBER\" '.builds[].number | tostring | contains($BUILD)' | grep -m1 true)\r\nLATEST_BUILD=$(curl -s \"https:\/\/ci.pufferfish.host\/job\/$VERSION\/api\/json\" | jq -r '.builds[0].number')\r\nif [ \"$BUILD_EXISTS\" = \"true\" ]; then\r\necho \"Build is valid for version $MINECRAFT_VERSION. Using build $BUILD_NUMBER\"\r\nelse\r\necho \"Using the latest Pufferfish build for version $MINECRAFT_VERSION\"\r\nBUILD_NUMBER=\"$LATEST_BUILD\"\r\nfi\r\n# grabbing the jar's name. Needed to download the artifact\r\nJAR_NAME=$(curl -s \"https:\/\/ci.pufferfish.host\/job\/$VERSION\/$BUILD_NUMBER\/api\/json\/\" | jq -r '.artifacts[0].fileName')\r\n# debug info , can be commented\/uncommented when appropiate\r\n# echo \"Version being downloaded\"\r\n# echo \"MC Version: $MINECRAFT_VERSION\"\r\n# echo \"Build: $BUILD_NUMBER\"\r\n# echo \"JAR Name of Build: $JAR_NAME\"\r\n# Creating the download link using the version wanted, build number and name of the jar, it'll either be latest or the build number specified\r\nDOWNLOAD_URL=\"https:\/\/ci.pufferfish.host\/job\/$VERSION\/$BUILD_NUMBER\/artifact\/build\/libs\/$JAR_NAME\"\r\ncd \/mnt\/server\r\necho -e \"Running curl -o \\\"$SERVER_JARFILE\\\" \\\"$DOWNLOAD_URL\\\" \"\r\nif [ -f \"$SERVER_JARFILE\" ]; then\r\nmv \"$SERVER_JARFILE\" \"${SERVER_JARFILE}.old\"\r\nfi\r\ncurl -o \"$SERVER_JARFILE\" \"$DOWNLOAD_URL\"\r\nif [ ! -f server.properties ]; then\r\necho \"Downloading MC server.properties\"\r\ncurl -o server.properties https:\/\/raw.githubusercontent.com\/parkervcp\/eggs\/master\/minecraft\/java\/server.properties\r\nfi\r\nfi",
+            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Minecraft Version",
+            "description": "The version of minecraft to download. \r\n\r\nLeave at latest to always get the latest version. Invalid versions will default to latest.",
+            "env_variable": "MINECRAFT_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Jar File",
+            "description": "The name of the server jar file to run the server with.",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "server.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|regex:\/^([\\w\\d._-]+)(\\.jar)$\/",
+            "field_type": "text"
+        },
+        {
+            "name": "Build Number",
+            "description": "The build number for the Pufferfish release.\r\n\r\nLeave at latest to always get the latest version. Invalid versions will default to latest.",
+            "env_variable": "BUILD_NUMBER",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
