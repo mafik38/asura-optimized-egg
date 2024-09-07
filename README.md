@@ -29,4 +29,6 @@ E-mail - maf@mafpogi.tech
 ![performance](https://github.com/user-attachments/assets/c7ebaa47-0bbd-4174-b17f-eb25afe6d4bf)
 ![starting](https://github.com/mafik38/asura-optimized-egg/assets/140355007/9670f483-a1a0-4cc9-be96-6afd62234ebe)
 ![chunks](https://github.com/mafik38/asura-optimized-egg/assets/140355007/711207c8-a6ac-49fe-ad8a-7716e878facf)
+after the server has been running for a long time in an optimized state ![{4702870E-9B2C-49D5-BDA9-1FDB680D81ED}](https://github.com/user-attachments/assets/7f6d1f02-4173-4a37-b26e-5fdbf6cd76be)
+
 
