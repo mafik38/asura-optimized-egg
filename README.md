@@ -9,6 +9,7 @@ curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/star
 ```
  - ^ the startup command
  - (For Folia use `curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/foliastart.sh && bash foliastart.sh` )
+ - (For Vanilla use `curl -Os https://raw.githubusercontent.com/mafik38/asura-optimized-egg/main/vanillastart.sh && bash vanillastart.sh` )
 
 
 FAQ
