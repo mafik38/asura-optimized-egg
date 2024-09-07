@@ -31,6 +31,7 @@ E-mail - maf@mafpogi.tech
 ![chunks](https://github.com/mafik38/asura-optimized-egg/assets/140355007/711207c8-a6ac-49fe-ad8a-7716e878facf)
 
 after the server has been running for a long time in an optimized state ![image](https://github.com/user-attachments/assets/5120fbc5-adad-4ebb-ba06-7c1e53e2330a)
+
 The best performance was 229MB RAM and 0.19% CPU
 
 
