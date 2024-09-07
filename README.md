@@ -33,7 +33,7 @@ E-mail - maf@mafpogi.tech
 
 after the server has been running for a long time in an optimized state ![image](https://github.com/user-attachments/assets/5120fbc5-adad-4ebb-ba06-7c1e53e2330a)
 
-The best performance was 229MB RAM and 0.19% CPU
+The best performance was 229MB RAM and 0.18% CPU
 
 
 
