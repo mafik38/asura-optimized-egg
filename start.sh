@@ -26,7 +26,7 @@ fi
 
 # Download Spark.jar
 echo "Download Spark.jar..."
-curl -s -L -o "Spark.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/Spark.jar" > /dev/null
+curl -s -L -o "Spark.jar" "https://www.spigotmc.org/resources/spark.57242/download?version=544173" > /dev/null
 if [ -f "Spark.jar" ]; then
     echo "Spark.jar downloaded successfully."
     cd /home/container/plugins/spark
@@ -39,7 +39,7 @@ fi
 # Download LagFixer.jar
 echo "Download LagFixer.jar..."
 cd /home/container/plugins
-curl -s -L -o "LagFixer.jar" "https://github.com/mafik38/asura-optimized-egg/raw/main/LagFixer.jar" > /dev/null
+curl -s -L -o "LagFixer.jar" "https://cdn.modrinth.com/data/fD1X4Kwd/versions/3cHlZHak/LagFixer.jar" > /dev/null
 if [ -f "LagFixer.jar" ]; then
     echo "LagFixer.jar downloaded successfully."
 else
